@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang='ko'>
+<head>
+	<meta charset='UTF-8'>
+	<title>webWorker.html</title>
+	<script>
+	var worker;
+	var i = 0;
+	
+	function messageHandler(event) {
+		i = event.data;
+		
+		if(i === 10) {
+			worker.postMessage('end');
+		}
+
+		document.querySelector('#result').innerHTML = i;
+	}
+	
+	function startWorker() {
+		worker = new Worker('demo_workers.js');		
+		worker.addEventListener('message', messageHandler);
+	}
+	
+	function stopWorker() { 
+		worker.terminate();
+	}
+	
+	function init() {
+		document.querySelector('#start').addEventListener('click', startWorker);
+		document.querySelector('#stop').addEventListener('click', stopWorker);
+	}
+	
+	window.addEventListener('load', init);
+	</script>
+</head>
+
+<body>
+
+	<p>
+		Count numbers:
+		<output id='result'></output>
+	</p>
+	<button id='start'>Start Worker</button>
+	<button id='stop'>Stop Worker</button>
+	<br>
+	<br>
+
+</body>
+</html>
+
+
+
+
+
