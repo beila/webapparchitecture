@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>history.html</title>
+	<meta charset='UTF-8' />
+</head>
+
+<body>
+
+	<button onclick='history.back();'>&lt;&lt;</button>
+	<button onclick='history.forward();'>&gt;&gt;</button>
+	<input id='url' type='text' size='30' value='http://' />
+	<button onclick='location.href = document.getElementById("url").value;'>load</button>
+	<input id='go' type='number' value='0'/>
+	<button onclick='history.go(document.getElementById("go").value);'>go</button>
+	<br>
+	<hr>
+	<script>
+	document.body.innerHTML += '<h3>history에 저장된 리스트의 수 : ' +
+		history.length + '</h3>';
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
