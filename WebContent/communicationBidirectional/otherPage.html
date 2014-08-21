@@ -21,7 +21,9 @@
 		}
 		
 		window.onmessage = function(event) {
-			document.body.innerHTML += '<h1>' + event.data + '</h1>';
+			var header = document.createElement('h1');
+			header.innerHTML = event.data;
+			document.body.appendChild(header);
 		}
 	}
 	</script>
