@@ -6,6 +6,10 @@
     <title>Chapter_5</title>
     <link href="http://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
+    <link href="header.css" rel="stylesheet" />
+    <link href="section.css" rel="stylesheet" />
+    <link href="aside.css" rel="stylesheet" />
+    <link href="footer.css" rel="stylesheet" />
 </head>
 <body>
     
