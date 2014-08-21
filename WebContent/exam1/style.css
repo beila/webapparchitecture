@@ -45,3 +45,11 @@ img {
 	width: 200px;
 	float: right;
 }
+
+/* 푸터 */
+#main_footer {
+	/* 중앙 정렬 */
+	width: 960px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
