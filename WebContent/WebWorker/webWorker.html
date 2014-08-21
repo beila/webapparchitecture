@@ -15,7 +15,7 @@
 			worker.postMessage('end');
 		}
 
-		document.querySelector('#result').innerHTML = i;
+		document.querySelector('#result').innerHTML = '<pre>' + JSON.stringify(event, null, 2) + '</pre>';
 	}
 	
 	function startWorker() {
