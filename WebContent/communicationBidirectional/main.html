@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Insert title here</title>
+	<meta charset='UTF-8'>
+	<style>
+	* {
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	iframe {
+		border: none;
+		width: 400px;
+	}
+	</style>
+	<script>
+	window.onload = function() {
+		window.onmessage = function(event) {
+			document.body.innerHTML += '<h1>' + event.data + '</h1>';
+		}
+		
+		document.getElementById('sendMsgToIframe').onclick = function() {
+			var ifrm = document.getElementById('ifrm');
+			var ifrmWin = ifrm.contentWindow
+			ifrmWin.postMessage('message from parent page!', '*');
+			ifrm.style.height = ((ifrm.contentWindow.document.body.scrollHeight) + 70) + 'px';
+			ifrm.style.width = ((ifrm.contentWindow.document.body.scrollWidth) + 20) + 'px';
+		}
+	}
+	</script>
+</head>
+
+<body>
+	
+	<br /><br />
+	<iframe src='otherPage.html' id='ifrm'></iframe>
+	
+	<br /><br />
+	<button id='sendMsgToIframe'>Send Message to iframe</button>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Insert title here</title>
+	<meta charset='UTF-8'>
+	<style>
+	* {
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	iframe {
+		border: none;
+	}
+	</style>
+	<script>
+	function resizeIframe(ifrm) {
+		ifrm.style.height = ifrm.contentWindow.document.body.scrollHeight + 'px';
+		ifrm.style.width = ifrm.contentWindow.document.body.scrollWidth + 'px';
+		alert(ifrm.style.width);
+	}
+	</script>
+</head>
+
+<body>
+
+	<iframe src='otherPage.html' id='ifrm' onload='resizeIframe(this)'></iframe>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

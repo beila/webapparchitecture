@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Insert title here</title>
+	<meta charset='UTF-8'>
+	<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	body {
+		width: 400px;
+	}
+	</style>
+	<script>
+	window.onload = function() {
+		document.getElementById('sendMsgToParent').onclick = function() {
+			window.parent.postMessage('message from iframe!', '*');
+		}
+		
+		window.onmessage = function(event) {
+			document.body.innerHTML += '<h1>' + event.data + '</h1>';
+		}
+	}
+	</script>
+</head>
+
+<body>
+	
+	<br /><br />
+	<h1>Other Page 입니다.</h1>
+	<br /><br />
+	<button id='sendMsgToParent'>Send Message to Parent Page</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

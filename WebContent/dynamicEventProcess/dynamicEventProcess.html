@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset='UTF-8' />
+	<title>Insert title here</title>
+	<script>
+	function clickHandler() {
+		alert('버튼을 클릭했습니다!');	
+	}
+	
+	function deleteHandler() {
+		var btn = document.querySelector('#btn');		
+		btn.parentNode.removeChild(btn);
+	}
+	
+	function createHandler() {
+		var btn = document.createElement('button');
+		btn.id = 'btn';
+		btn.innerHTML = 'Click';
+		
+		document.body.appendChild(btn);
+	}
+	
+	function eventProcessHandler() {
+		document.querySelector('#btn').addEventListener('click', clickHandler);	
+	}
+	
+	function init() {
+		document.querySelector('#btn').addEventListener('click', clickHandler);	
+		document.querySelector('#delete').addEventListener('click', deleteHandler);	
+		document.querySelector('#create').addEventListener('click', createHandler);	
+		document.querySelector('#eventProcess').addEventListener('click', eventProcessHandler);	
+	}
+	
+	window.addEventListener('load', init);
+	</script>
+</head>
+
+<body>
+	<button id='delete'>Delete</button>
+	<button id='create'>Create</button>
+	<button id='eventProcess'>Event Process</button>
+	<hr />
+	
+	<button id='btn'>Click</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
