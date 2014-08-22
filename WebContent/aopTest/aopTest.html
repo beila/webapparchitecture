@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Aspect Oriented Programming in Javascript</title>
+
+<script src='http://code.jquery.com/jquery-1.10.1.min.js' charset='UTF-8'></script>
+<script src='aop.min.js'></script>
+<script>
+	function aopTest(){
+		alert('[2] aopTest');
+		return 'returned aopTest';
+	}
+	
+	$.aop.before( {target: window, method: 'aopTest'}, function() {
+		console.log($.aop);
+		alert('[1] Before Advice!');
+		//throw '예외 발생!'
+	});
+
+	$.aop.after( {target: window, method: 'aopTest'}, function(result) {
+		alert('[3] After Advice!: ' + result);
+		return '>>' + result + '<<';
+	});
+	
+	alert('[4] ' + aopTest());
+</script>
+</head>
+<body>
+
+</body>
+</html>
