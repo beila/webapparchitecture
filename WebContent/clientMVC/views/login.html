@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Insert title here</title>
+	<meta charset='UTF-8'>
+	<script src='../scripts/model/loginDO.js' charset='UTF-8'></script>
+	<script src='../scripts/model/loginDAO.js' charset='UTF-8'></script>
+	<script src='../scripts/model/loginSO.js' charset='UTF-8'></script>
+	<script src='../scripts/loginController.js' charset='UTF-8'></script>
+</head>
+<body>
+
+	<form id='myForm'>
+	<fieldset>
+	<legend>login</legend>
+		<label for='id'>id</label>
+		<input type='text' name='id' id='id' />
+		<label for='passwd'>password</label>
+		<input type='password' name='passwd' id='passwd' />
+		<input type='hidden' name='command' value='login' />
+		<input type='submit' value='login' />
+	</fieldset>
+	</form>
+
+</body>
+</html>
