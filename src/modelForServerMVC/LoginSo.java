@@ -1,4 +1,4 @@
-package model;
+package modelForServerMVC;
 
 public class LoginSo {
 

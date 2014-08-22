@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"
-	import="model.*"
+	import="modelForServerMVC.*"
  %>
 
 <%
@@ -8,10 +8,10 @@
 	if ("login".equals(command)
 			&& "POST".equalsIgnoreCase(request.getMethod())) {
 %>
-        <jsp:useBean id="loginDo" class="model.LoginDo" />
+        <jsp:useBean id="loginDo" class="modelForServerMVC.LoginDo" />
         <jsp:setProperty name="loginDo" property="*" />
         
-        <jsp:useBean id="loginSo" class="model.LoginSo" />
+        <jsp:useBean id="loginSo" class="modelForServerMVC.LoginSo" />
 <%
 		if (loginSo.confirmLogin(loginDo)) {
 			session.setAttribute("login", loginDo.getId());
@@ -24,5 +24,5 @@
         return;
 	}
 
-    request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+    request.getRequestDispatcher("/WEB-INF/viewsForServerMVC/login.jsp").forward(request, response);
 %>
