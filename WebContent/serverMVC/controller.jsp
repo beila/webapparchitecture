@@ -4,6 +4,15 @@
 
 <%
 	String command = request.getParameter("command");
+	String forwardUrl = "";
+
+	if (null == command) {
+		String path = request.getRequestURL().toString();
+		path = path.substring(path.lastIndexOf('/') +1);
+		if ("controller.jsp".equals(path)) {
+			forwardUrl = "/WEB-INF/views/login.jsp";
+		}
+	}
 
 	if ("login".equals(command)
 			&& "POST".equalsIgnoreCase(request.getMethod())) {
@@ -15,11 +24,14 @@
 <%
 		if (loginSo.confirmLogin(loginDo)) {
 			session.setAttribute("login", loginDo.getId());
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
+			forwardUrl = "/WEB-INF/views/index.jsp";
 		} else {
-			response.sendRedirect("login.html");
+			forwardUrl = "/WEB-INF/views/login.jsp";
 		}
 		
+	}
+
+	if (!"".equals(forwardUrl)) {
+        request.getRequestDispatcher(forwardUrl).forward(request, response);
 	}
 %>

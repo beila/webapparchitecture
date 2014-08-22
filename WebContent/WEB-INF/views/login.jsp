@@ -1,3 +1,11 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<%
+	if (null != session.getAttribute("login")) {
+		%><jsp:forward page="/WEB-INF/views/index.jsp" /><%
+	}
+%>
+
 <!DOCTYPE html>
 
 <html>
