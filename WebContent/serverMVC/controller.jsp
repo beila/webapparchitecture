@@ -19,7 +19,9 @@
 	}
 	
 	if ("logout".equals(command)) {
-		session.removeAttribute("login");
+		session.invalidate();
+        response.sendRedirect("controller.jsp");
+        return;
 	}
 
     request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
