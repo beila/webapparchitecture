@@ -17,6 +17,10 @@
 			session.setAttribute("login", loginDo.getId());
 		}
 	}
+	
+	if ("logout".equals(command)) {
+		session.removeAttribute("login");
+	}
 
     request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 %>

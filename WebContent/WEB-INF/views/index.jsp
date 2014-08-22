@@ -12,5 +12,7 @@
 
 <h3> <%=session.getAttribute("login")%>님 환영합니다.</h3>
 
+<a href="controller.jsp?command=logout">logout</a>
+
 </body>
 </html>
